@@ -16,7 +16,7 @@ today_cte as (
 today as (
 select actor_name,
 	actor_id,
-	year,
+	f.year,
 	ARRAY_AGG(films) as films
 	, CASE
         WHEN AVG(f.rating) > 8 THEN 'star'::quality_class_type
